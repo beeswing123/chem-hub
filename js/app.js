@@ -507,6 +507,26 @@
     document.body.classList.toggle('sidebar-open');
   });
 
+  /* ---------- theme (day/night) ---------- */
+  var THEME_KEY = 'gck_theme';
+  function applyTheme(t) {
+    document.body.classList.toggle('light', t === 'light');
+    var b = $('#themeBtn');
+    if (b) {
+      b.textContent = t === 'light' ? '☾' : '☀';
+      b.title = t === 'light' ? '夜间模式' : '日间模式';
+    }
+  }
+  var theme = 'dark';
+  try { theme = localStorage.getItem(THEME_KEY) || 'dark'; } catch (e) {}
+  applyTheme(theme);
+  var themeBtn = $('#themeBtn');
+  if (themeBtn) themeBtn.addEventListener('click', function () {
+    theme = theme === 'light' ? 'dark' : 'light';
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+    applyTheme(theme);
+  });
+
   window.addEventListener('hashchange', render);
   initSearch();
   render();

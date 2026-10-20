@@ -11,6 +11,7 @@ Pure static site — no build step, no dependencies. Works offline (`file://`) a
 - **Search** — press `/` or click the search box; supports English & Chinese keywords
 - **Progress tracking** — mark sections as learned; auto-saved to `localStorage`; export/import/reset on the Stats page
 - **Self-Test Center** — 70 questions in fixed exam-style order, no immediate feedback, score + explanations after submission, attempt history
+- **Day/Night theme** — toggle via the ☀/☾ button in the top bar; choice persisted
 - **Stats** — overall & per-chapter mastery, quiz best scores and history
 
 ## Deploy to GitHub Pages
